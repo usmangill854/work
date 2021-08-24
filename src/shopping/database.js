@@ -13,7 +13,7 @@ const products=[
         id:2,
         catagory : "Laptop",
         name:"Samsung Laptop",
-        price:500,
+        price:5000,
         image: image1
 
     },

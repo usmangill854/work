@@ -1,4 +1,5 @@
 import image from "../images/image2.jpg";
+import image1 from "../images/images.jpg"
 const products=[
     {
         id:1,
@@ -13,7 +14,7 @@ const products=[
         catagory : "Laptop",
         name:"Samsung Laptop",
         price:500,
-        image:""
+        image: image1
 
     },
     {

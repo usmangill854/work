@@ -7,9 +7,6 @@ const products=[
         price:500,
         image
 
-
-
-
     },
     {
         id:2,

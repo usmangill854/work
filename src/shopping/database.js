@@ -1,12 +1,22 @@
-import image from "../images/image2.jpg";
-import image1 from "../images/images.jpg"
+import images from "../images/images.jpg";
+import images1 from "../images/images1.jpg"
+import image2 from "../images/image2.jpg";
+
+import laptop from "../images/laptop2.jpg";
+import laptop4 from "../images/laptop4.jpg"
+import laptop5 from "../images/laptop5.jpg";
+import laptop6 from "../images/laptop6.jpg"
+import laptop1 from "../images/laptop1.jpg";
+import laptop2 from "../images/laptop2.jpg"
+
+
 const products=[
     {
         id:1,
         catagory : "Laptop",
         name:"Toshiba Laptop",
         price:500,
-        image
+        image:laptop1
 
     },
     {
@@ -14,7 +24,7 @@ const products=[
         catagory : "Laptop",
         name:"Samsung Laptop",
         price:5000,
-        image: image1
+        image: laptop
 
     },
     {
@@ -23,6 +33,9 @@ const products=[
         name:"Apple Laptop",
         price:500,
 
+        image: laptop2
+
+
     },
     {
         id:4,
@@ -30,12 +43,16 @@ const products=[
         name:"Toshiba Mob",
         price:500,
 
+        image: image2
+
     },
     {
         id:5,
-        catagory : "Mobile",
+        catagory : "laptop",
         name:"Toshiba Laptop",
         price:500,
+
+        image: laptop4
 
     },
     {
@@ -44,12 +61,18 @@ const products=[
         name:"acer Laptop",
         price:500,
 
+        image: laptop5
+
+
     },
     {
         id:7,
         catagory : "Mobile",
         name:"acer Mobile",
         price:500,
+
+        image: images1
+
 
     },
     {
@@ -58,6 +81,9 @@ const products=[
         name:"Toshiba Laptop",
         price:500,
 
+        image: laptop6
+
+
     },
     {
         id:9,
@@ -65,6 +91,14 @@ const products=[
         name:"electro",
         price:500,
 
+        image: images
+
+
     }
+
 ]
+export const getProductByID=(id)=>{
+    return products.find(product=>product.id== id)
+}
+
 export default products;

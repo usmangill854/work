@@ -16,20 +16,26 @@ import {
 } from "react-bootstrap";
 import {useState} from "react";
 import * as PropTypes from "prop-types";
-
-
+import {useParams} from "react-router-dom";
+import products from "./database";
+import {getProductByID} from "./database";
 
 const Detail_page=()=>{
+    let {id}=useParams();
     const[count,setCount]=useState(0)
+    const product=getProductByID(id)
+
+
+
     return<>
- <Container>
+  <Container>
      <Row>
          <Col md={8} >
-             <img src=""  />
+             <img src= ""  />
          </Col>
          <Col md={4}>
              <Card  >
-                 <Card.Header  as="h5" >Burger Name</Card.Header >
+                 <Card.Header  as="h5" >{product.id}Burger Name</Card.Header >
                  <Card.Body className="mt-3">
                      <Card.Title className="m-3">price 500</Card.Title>
                      <Button  className="m-3"  size= "sm" onClick={()=>setCount(count-1)} disabled={count<1} >-</Button>

@@ -19,7 +19,7 @@ const App=()=> {
     <Route exact path="/" component={Home} />
     <Route exact path="/cart" component={Cart} />
     <Route exact path= "/signIn" component={Sign_In}/>
-    <Route exact path="/detailPage" component= {Detail_page} />
+    <Route exact path="/detailPage/:id" component= {Detail_page} />
 </Router>
 
 

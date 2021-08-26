@@ -31,11 +31,11 @@ const Detail_page=()=>{
   <Container>
      <Row>
          <Col md={8} >
-             <img src= ""  />
+             <img src= {product.image}  />
          </Col>
          <Col md={4}>
              <Card  >
-                 <Card.Header  as="h5" >{product.id}Burger Name</Card.Header >
+                 <Card.Header  as="h5" >{product.name}</Card.Header >
                  <Card.Body className="mt-3">
                      <Card.Title className="m-3">price 500</Card.Title>
                      <Button  className="m-3"  size= "sm" onClick={()=>setCount(count-1)} disabled={count<1} >-</Button>

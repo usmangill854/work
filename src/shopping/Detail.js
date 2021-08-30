@@ -14,30 +14,44 @@ import {
     Form,
     Table
 } from "react-bootstrap";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import * as PropTypes from "prop-types";
 import {useParams} from "react-router-dom";
 import products from "./database";
 import {getProductByID} from "./database";
 
 const Detail_page=()=>{
+
+
+
     let {id}=useParams();
     const[count,setCount]=useState(0)
     const product=getProductByID(id)
+const[detail,setDetail]=useState({});
 
+    useEffect(()=>{
+        fetch(`http://localhost:5000/api/prod/detail/${id}`,{method:"GET"})
+            .then(recieved=>recieved.json())
+            .then(recieved=>{
+                setDetail(recieved)
+            })
+            .catch(err=>console.log(err))
+
+        }
+    ,[])
 
 
     return<>
   <Container>
      <Row>
          <Col md={8} >
-             <img src= {product.image}  />
+             <img src= {detail.image}  />
          </Col>
          <Col md={4}>
              <Card  >
-                 <Card.Header  as="h5" >{product.name}</Card.Header >
+                 <Card.Header  as="h5" >{detail.name}</Card.Header >
                  <Card.Body className="mt-3">
-                     <Card.Title className="m-3">price 500</Card.Title>
+                     <Card.Title className="m-3">{detail.price}</Card.Title>
                      <Button  className="m-3"  size= "sm" onClick={()=>setCount(count-1)} disabled={count<1} >-</Button>
 
                      {count}
@@ -130,3 +144,10 @@ const Detail_page=()=>{
     </>
 }
 export default Detail_page
+//
+// const[username,setUsername]=useState("")
+// const [password,setPassword]=useState("")
+// const Sign_In=()=>{
+//     fetch("http://localhost:5000/api/sigin",{method:"POST",body:JSON.stringify( {username,password}) }
+//
+//     )
